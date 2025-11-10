@@ -7,6 +7,8 @@ function genEnrolment() {
 
 exports.register = async (req, res) => {
   try {
+
+    console.log('Registering student with data:', req.body);
     const { enrolmentNumber, password, name, course } = req.body;
     if (!enrolmentNumber || !password || !name || !course) {
       return res.status(400).json({ error: 'enrolmentNumber, password, name and course required' });

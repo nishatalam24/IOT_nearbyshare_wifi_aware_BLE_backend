@@ -56,6 +56,7 @@ exports.list = async (req, res) => {
       .populate('student', 'enrolmentNumber name course')
       .select('-__v');
 
+      console.log('Attendance list filter:', attends);
     return res.json(attends);
   } catch (err) {
     return res.status(500).json({ error: err.message });
